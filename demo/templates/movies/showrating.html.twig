@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}
+
+{% block title %}Ratings{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    <div class="container">
+        <div>
+            <div class="heading">
+                <div>
+                    <h2>Ratings</h2>
+                </div>
+            </div>
+            <div class="list">
+                <ul>
+                    {% for rating in movie.rating %}
+                        <li>Rating: {{ rating.rating }}<br><br>
+                            Comments: {{ rating.comment }}<br><br>
+                            User: {% if rating.user is null %}Guest User{% else %}{{ rating.user.name }}{% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include 'registration/footer.html.twig' %}
+{% endblock %}

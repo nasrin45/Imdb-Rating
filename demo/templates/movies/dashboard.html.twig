@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    {% include 'header.html.twig' %}
+    <div class="container">
+        <div>
+            <div class="heading">
+                <div>
+                    <h2>Movie Information</h2>
+                </div>
+            </div>
+            <div class="list">
+                <ul>
+                    {% for movie in movies %}
+                        <li>
+                            <img src="{{ movie.image }}" alt="{{ movie.name }} Image" width="200">
+                            <strong>{{ movie.name }}</strong> (Directed by {{ movie.director }})
+                            <p>Budget: {{ movie.budget }}</p>
+                            <p>Crew: {{ movie.crew }}</p>
+                            <p>Category: {{ movie.category }}</p>
+                            <p>Description: {{ movie.description }}</p>
+                            <div class="action">
+                                <a href="{{ path('movie_rating',{'id': movie.id}) }}">Give Rating</a>
+                                <a href="{{ path('show_rating',{'id':movie.id}) }}">View Ratings</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include 'registration/footer.html.twig' %}
+{% endblock %}

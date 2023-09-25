@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}
+
+{% block title %}IMDb{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <div>
+            <div class="logo">
+                <img src="{{ asset('images/logo.png') }}" alt="IMDb"/>
+            </div>
+            <div class="registration-form">
+
+                <p>Create account</p>
+
+                {{ form_errors(registrationForm) }}
+
+                {{ form_start(registrationForm) }}
+                <div class="form-group">
+                    {{ form_row(registrationForm.name, {label: 'Your Name'}) }}
+                    {{ form_row(registrationForm.email, {label: 'Email'}) }}
+                        {{ form_row(registrationForm.password.first) }}
+                        {{ form_row(registrationForm.password.second) }}
+                    <button class="button" type="submit" class="btn">Create your IMDb account</button>
+                </div>
+                {{ form_end(registrationForm) }}
+                <div class="form-section">
+                    <hr>
+                    <p>Already have an account? <a href={{ url('app_login') }}>Sign in</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <hr>
+    </div>
+    {% include 'registration/footer.html.twig' %}
+{% endblock %}
+
+

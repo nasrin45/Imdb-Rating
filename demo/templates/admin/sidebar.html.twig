@@ -1,0 +1,24 @@
+<nav>
+    <div class="logo-name">
+        <div class="logo-image">
+            <img src={{ asset('images/logo.png') }} alt="">
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li><a href={{ path("admin_movies") }}>
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+            <li><a href={{ path("add_movies") }}>
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Add Movies</span>
+                </a></li>
+        </ul>
+
+        <ul class="logout-mode">
+            <li><a href="{{ path('app_login') }}">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+        </ul>
+    </div>
+</nav>

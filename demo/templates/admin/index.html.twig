@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/sidebar.css') }}">
+{% endblock %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <div>
+        <header class="bkground">
+            <div class="header-container">
+                <div class="headerWrap">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="{{ asset('images/logo.png') }}" alt="IMDb"/>
+                        </a>
+                    </div>
+                    <div class="navbar">
+                        <ul>
+                            <li><p>Welcome {{ app.user.name | default('aboard') }}</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div>
+            {% include 'admin/sidebar.html.twig' %}
+            <div>
+                <div class="heading">
+                    <div>
+                        <h2>Movie Information</h2>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul>
+                        {% for movie in movies %}
+                            <li>
+                                <img src="{{ movie.image }}" alt="{{ movie.name }} Image" width="200">
+                                <strong>{{ movie.name }}</strong> (Directed by {{ movie.director }})
+                                <p>Budget: {{ movie.budget }}</p>
+                                <p>Crew: {{ movie.crew }}</p>
+                                <p>Category: {{ movie.category }}</p>
+                                <p>Description: {{ movie.description }}</p>
+                                <div class="action">
+                                    <a href="{{ path('show_rating',{'id':movie.id}) }}">
+                                        View Ratings
+                                    </a>
+                                    <a href="{{ path('edit_movies', {'id': movie.id}) }}">
+                                        Edit
+                                    </a>
+                                    <a href="{{ path('admin_delete', {'id': movie.id}) }}">
+                                        Delete
+                                    </a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% include 'registration/footer.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

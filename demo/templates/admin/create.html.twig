@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/admin/create.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/sidebar.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% include 'admin/sidebar.html.twig' %}
+    <div class="container">
+        <div>
+            <div class="heading">
+                <p>Create new movie</p>
+            </div>
+            <div class="form-container">
+                <div class="form">
+                    {{ form_start(form) }}
+
+                    {{ form_row(form.name) }}
+                    {{ form_row(form.image) }}
+                    {{ form_row(form.director) }}
+                    {{ form_row(form.budget) }}
+                    {{ form_row(form.crew) }}
+                    {{ form_row(form.description) }}
+                    {{ form_row(form.category) }}
+
+                    <button type="submit" class="btn btn-primary">Create</button>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            {% include 'registration/footer.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

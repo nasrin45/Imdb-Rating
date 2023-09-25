@@ -1,0 +1,18 @@
+<header class="bkground">
+    <div class="header-container">
+        <div class="headerWrap">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{ asset('images/logo.png') }}" alt="IMDb"/>
+                </a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><p>Welcome {{ app.user.name | default('aboard') }}</p></li>
+                    <li class="active"><a href="{{ path('movie.dashboard') }}">Home</a></li>
+                    <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

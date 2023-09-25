@@ -1,0 +1,99 @@
+a{
+    text-decoration: none;
+    color: #0066C0;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+}
+.section hr{
+    width: 600px;
+    margin-bottom: 30px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+    margin-top: 5px;
+}
+.registration-form{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 26px!important;
+    width: 320px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+.registration-form p{
+    font-family: Arial,sans-serif;
+    font-size: 28px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    }
+.form-group {
+    display: block;
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: 700;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+.form-group input[type="text"], .form-group input[type="password"], .form-group input[type="email"] {
+    width: 290px;
+    padding: 8px;
+    height: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+}
+.button{
+    width: 310px;
+    background-color: #ffd813;
+    color: #000;
+    border: 1px solid #FFFF00;
+    border-radius: 7px;
+    padding: 7px 20px;
+}
+.form-section{
+    margin-top: 25px;
+}
+.form-section p{
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+.form-section hr{
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.login-container hr{
+    width: 250px;
+    margin-top: 40px;
+}
+.login-section{
+    margin-top: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+.login p{
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    color: #a1a0a0;
+}
+.login a{
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 7px 20px;
+}
